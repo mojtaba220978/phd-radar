@@ -1,0 +1,197 @@
+name: PhD Radar (daily)
+
+on:
+  schedule:
+    # ⚠️ گیت‌هاب اجرای زمان‌بندی‌شده را تضمین نمی‌کند و گاهی می‌اندازد.
+    #    برای همین سه نوبت تعریف شده است. اولین نوبتی که موفق شود
+    #    گزارش را می‌فرستد؛ نوبت‌های بعدی خودشان می‌فهمند و رد می‌شوند.
+    - cron: "30 5 * * *"    # 09:00 تهران — نوبت اصلی
+    - cron: "30 8 * * *"    # 12:00 تهران — پشتیبان اول
+    - cron: "30 12 * * *"   # 16:00 تهران — پشتیبان دوم
+  workflow_dispatch:        # اجرای دستی از تب Actions
+    inputs:
+      min_score:
+        description: "حداقل امتیاز تطابق (پیش‌فرض از config.yaml)"
+        required: false
+      only_new:
+        description: "فقط آگهی‌های جدید؟ (true/false)"
+        required: false
+        default: "false"
+      force:
+        description: "حتی اگر امروز فرستاده شده، دوباره بفرست؟ (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write           # برای commit کردن گزارش‌ها و seen.json
+  actions: write            # برای زنده نگه داشتن زمان‌بندی
+  pages: write
+  id-token: write
+
+concurrency:
+  group: phd-radar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── محافظ نوبت تکراری ──────────────────────────────
+      # نوبت‌های پشتیبان فقط وقتی باید کار کنند که نوبت قبلی نرسیده باشد.
+      # نشانه‌گذار data/last_sent.txt تنها پس از یک ارسال موفق نوشته
+      # می‌شود، پس اگر تاریخش امروز است یعنی گزارش رفته و باید رد شویم.
+      - name: Already sent today?
+        id: guard
+        run: |
+          TODAY="$(date -u +%F)"
+          FORCE="${{ github.event.inputs.force }}"
+          if [ "$FORCE" = "true" ]; then
+            echo "درخواست دستی force — بدون توجه به نشانه‌گذار اجرا می‌شود"
+            echo "skip=false" >> $GITHUB_OUTPUT
+          elif [ -f data/last_sent.txt ] && [ "$(cat data/last_sent.txt)" = "$TODAY" ]; then
+            echo "گزارش امروز ($TODAY) قبلاً ارسال شده — این نوبت رد شد."
+            echo "skip=true"  >> $GITHUB_OUTPUT
+          else
+            echo "گزارش امروز هنوز نرفته — ادامه می‌دهیم."
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run PhD Radar
+        id: pub
+        if: steps.guard.outputs.skip != 'true'
+        env:
+          # --- تلگرام ---
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # --- هوش مصنوعی (OpenRouter / Gemini / Groq) ---
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.min_score }}" ]; then ARGS="$ARGS --min-score ${{ github.event.inputs.min_score }}"; fi
+          if [ "${{ github.event.inputs.only_new }}" = "true" ]; then ARGS="$ARGS --only-new"; fi
+          if [ "${{ github.event.inputs.force }}"    = "true" ]; then ARGS="$ARGS --force"; fi
+          python main.py $ARGS
+
+      # فقط اگر پایتون بدون خطا تمام شد، امروز را «انجام‌شده» علامت بزن.
+      - name: Mark today as done
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          mkdir -p data
+          date -u +%F > data/last_sent.txt
+
+      # گیت‌هاب زمان‌بندی مخزن‌هایی را که ۶۰ روز تغییری نداشته‌اند بی‌صدا
+      # خاموش می‌کند. این گام هر بار زمان‌بندی را دوباره روشن می‌کند تا
+      # هرگز به آن سقف نرسیم.
+      - name: Keep the schedule alive
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -X PUT \
+            "repos/${{ github.repository }}/actions/workflows/daily.yml/enable" \
+            && echo "زمان‌بندی زنده است ✅" || echo "روشن بود، نیازی نبود"
+
+      - name: Upload report as artifact
+        if: steps.guard.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: phd-radar-report
+          path: |
+            reports/*.html
+            reports/*.csv
+            reports/*.md
+          retention-days: 30
+
+      - name: Commit reports back to the repo
+        if: steps.guard.outputs.skip != 'true'
+        run: |
+          git config user.name  "phd-radar-bot"
+          git config user.email "actions@github.com"
+          git add reports data docs || true
+          git add -f data/last_sent.txt || true
+          git diff --quiet --staged || git commit -m "PhD Radar report $(date -u +%F)"
+          git pull --rebase --autostash || true
+          git push || true
+
+      # ── ضربان قلب ──────────────────────────────────────
+      # اگر اجرایی بی‌سروصدا کاری نکند، ردیف سبز است ولی گزارشی نمی‌آید.
+      # این گام دلیلش را خصوصی خبر می‌دهد.
+      - name: Heartbeat — say what happened
+        if: always()
+        continue-on-error: true
+        shell: bash
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          OWNER_CHAT_ID: ${{ secrets.OWNER_CHAT_ID }}
+          SKIP:   ${{ steps.guard.outputs.skip }}
+          PUBRES: ${{ steps.pub.outcome }}
+          EVENT:  ${{ github.event_name }}
+        run: |
+          [ -z "$OWNER_CHAT_ID" ] && { echo "OWNER_CHAT_ID تعریف نشده"; exit 0; }
+          if [ "$PUBRES" = "success" ]; then
+            echo "گزارش رفت — نیازی به پیام نیست"; exit 0
+          fi
+          if [ "$SKIP" = "true" ]; then
+            export WHY="گزارش امروز قبلاً ارسال شده بود، پس این نوبت رد شد. (طبیعی است)"
+          elif [ "$PUBRES" = "failure" ]; then
+            export WHY="اجرای امروز با خطا متوقف شد. جزئیات در تب Actions."
+          else
+            export WHY="اجرا شد ولی گزارشی نفرستاد. رویداد: $EVENT"
+          fi
+          python - <<PY
+          import os, urllib.request, urllib.parse
+          msg = ("\U0001F4E1 <b>PhD Radar — گزارش اجرا</b>\n\n" + os.environ["WHY"]
+                 + "\n\n<i>این پیام فقط برای توست.</i>")
+          data = urllib.parse.urlencode({
+              "chat_id": os.environ["OWNER_CHAT_ID"], "text": msg,
+              "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
+          url = f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage"
+          try:
+              urllib.request.urlopen(urllib.request.Request(url, data), timeout=20)
+              print("گزارش فرستاده شد")
+          except Exception as e:
+              print("گزارش نرفت:", e)
+          PY
+
+      - name: Tell me on Telegram if the run failed
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          from radar.notify import telegram_alert
+          telegram_alert("⚠️ <b>PhD Radar</b>\nاجرای امروز با خطا متوقف شد.\n"
+                         "برای دیدن جزئیات به تب Actions در گیت‌هاب سر بزن.")
+          PY
+
+  # لینک ثابت و همیشگی گزارش: https://<username>.github.io/<repo>/
+  # اختیاری: فقط اگر Variable به نام ENABLE_PAGES با مقدار true بسازی اجرا می‌شود
+  deploy-pages:
+    needs: run
+    if: vars.ENABLE_PAGES == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
