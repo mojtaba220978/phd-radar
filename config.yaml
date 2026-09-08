@@ -1,0 +1,301 @@
+# ============================================================
+#  PhD Radar — پیکربندی اصلی
+#  همه چیز را از همین فایل تنظیم کن. نیازی به دست زدن به کد نیست.
+# ============================================================
+
+profile:
+  name: "Clinical Psychology / Cognitive Neuroscience PhD hunt"
+  # زبان گزارش: fa (دوزبانه فارسی/انگلیسی) یا en
+  report_language: fa
+
+# ------------------------------------------------------------
+# ۱) فیلتر موضوعی
+# ------------------------------------------------------------
+filters:
+  # حداقل امتیاز تطابق برای اینکه یک آگهی «مناسب» شمرده شود (0..100)
+  min_score: 45
+
+  # نوع موقعیتی که می‌خواهی. اگر عنوان/متن هیچ‌کدام از این‌ها را نداشته باشد رد می‌شود.
+  position_keywords:
+    - "phd"
+    - "ph.d"
+    - "doctoral"
+    - "doctorate"
+    - "promovendus"
+    - "promovenda"
+    - "doctoral candidate"
+    - "doctoral researcher"
+    - "doctoral student"
+    - "early stage researcher"
+    - "esr"
+    - "msca doctoral network"
+    - "scholarship"
+    - "fellowship"
+    - "grant"
+    - "beurs"
+
+  # اگر true باشد، پست‌داک‌ها هم نمایش داده می‌شوند (پیش‌فرض: خیر)
+  include_postdoc: false
+
+  # اگر true باشد، موقعیت‌های هیئت‌علمی (Assistant/Associate Professor, Lecturer) هم بیایند
+  include_faculty: false
+
+  # آگهی‌هایی که مهلتشان گذشته حذف شوند
+  hide_expired: true
+  # اگر کمتر از این تعداد روز تا مهلت مانده باشد، نمایش نده (۰ = همه را نشان بده)
+  min_days_to_deadline: 0
+
+  # کلیدواژه‌های موضوعی. وزن بالاتر = اهمیت بیشتر در امتیازدهی.
+  # ستاره (*) در انتها یعنی «هر پسوندی»: psycholog* → psychology, psychological,
+  # psychologie (هلندی/آلمانی), psycholoog ...
+  topic_keywords:
+    # --- ریشه‌های چندزبانه (هلندی/آلمانی/انگلیسی) ---
+    psycholog*: 8
+    klinische psycholog*: 12
+    neuropsycholog*: 10
+    psychiatr*: 8
+    neuroscien*: 8
+    neurowetenschap*: 8
+    neurowissenschaft*: 8
+    geestelijke gezondheid*: 8
+    psychische*: 6
+    gedragswetenschap*: 6
+    hersenonderzoek*: 7
+    # --- انگلیسی، دقیق ---
+    clinical psychology: 10
+    clinical neuropsychology: 10
+    psychotherapy: 9
+    psychopathology: 9
+    mental health: 8
+    mental disorder: 8
+    psychiatry: 7
+    depression: 7
+    anxiety: 7
+    ptsd: 7
+    trauma: 6
+    addiction: 6
+    substance use: 6
+    eating disorder: 6
+    schizophrenia: 6
+    psychosis: 6
+    autism: 5
+    adhd: 5
+    cognitive neuroscience: 10
+    computational psychiatry: 9
+    affective neuroscience: 8
+    social neuroscience: 7
+    neuroimaging: 7
+    fmri: 7
+    eeg: 6
+    meg: 5
+    tms: 5
+    neuromodulation: 5
+    cognition: 5
+    memory: 4
+    emotion regulation: 6
+    behavioural science: 5
+    behavioral science: 5
+    experimental psychology: 6
+    health psychology: 6
+    developmental psychology: 5
+    e-health: 4
+    digital mental health: 7
+    psychometrics: 5
+    intervention study: 5
+    randomized controlled trial: 4
+    wellbeing: 3
+    stress: 3
+    resilience: 3
+    burnout: 4
+    suicide: 6
+    loneliness: 4
+    mindfulness: 4
+    cognitive behavioural therapy: 8
+    cbt: 5
+    clinical trial: 3
+    patients: 2
+
+  # اگر هرکدام از این‌ها در عنوان باشد، آگهی حذف می‌شود
+  exclude_keywords:
+    - "veterinary"
+    - "animal husbandry"
+    - "plant"
+    - "agronomy"
+    - "civil engineering"
+    - "mechanical engineering"
+    - "chemical engineering"
+    - "quantum"
+    - "astrophysic"
+    - "geolog"
+    - "marine biology"
+    - "food technology"
+    - "hydrolog"
+    - "welding"
+    - "nanomaterial"
+    - "student assistant"
+    - "internship"
+    - "teaching assistant"
+    - "guest lecturer"
+
+# ------------------------------------------------------------
+# ۲) فیلتر جغرافیایی — هلند در اولویت، بقیه اروپا هم نمایش داده می‌شود
+# ------------------------------------------------------------
+geography:
+  mode: priority          # priority | only | all
+  priority_countries: ["Netherlands", "NL"]
+  priority_bonus: 20      # امتیاز اضافه برای هلند
+  allowed_countries:      # خالی = همه کشورهای اروپایی
+    - Netherlands
+    - Germany
+    - Belgium
+    - Denmark
+    - Sweden
+    - Norway
+    - Finland
+    - Austria
+    - Switzerland
+    - Ireland
+    - France
+    - Spain
+    - Italy
+    - Portugal
+    - Czechia
+    - Czech Republic
+    - Poland
+    - Luxembourg
+    - Iceland
+    - Estonia
+    - Slovenia
+    - United Kingdom
+
+# ------------------------------------------------------------
+# ۳) منابع
+# ------------------------------------------------------------
+sources:
+  academictransfer:
+    enabled: true
+    # عبارت‌هایی که مستقیم در موتور جستجوی AcademicTransfer سرچ می‌شوند
+    queries:
+      - "psychology"
+      - "clinical psychology"
+      - "mental health"
+      - "psychiatry"
+      - "cognitive neuroscience"
+      - "neuroscience"
+      - "behavioural science"
+      - "brain"
+    max_per_query: 100
+
+  euraxess_jobs:
+    enabled: true
+    pages: 40            # هر صفحه ۱۰ آگهی → ۴۰۰ آگهی تازه در هر اجرا
+    fetch_details: true  # فقط برای آگهی‌های منتخب صفحه جزئیات هم گرفته می‌شود
+
+  euraxess_funding:
+    enabled: true
+    pages: 10
+
+  nwo_calls:
+    enabled: true
+    pages: 4
+
+  # منابع اضافی مبتنی بر RSS (اختیاری — هرچه بخواهی اضافه کن)
+  extra_rss:
+    enabled: true
+    feeds:
+      - name: "EURAXESS latest jobs (RSS)"
+        url: "https://euraxess.ec.europa.eu/job-feed"
+
+# ------------------------------------------------------------
+# ۴) رتبه‌بندی بر اساس مبلغ گرنت/حقوق
+# ------------------------------------------------------------
+money:
+  # همه مبالغ به یورو در سال نرمال‌سازی می‌شوند
+  # ضریب تبدیل حقوق ماهانه هلندی به سالانه (۱۲ ماه + ۸٪ holiday + ۸.۳٪ سال‌پایان)
+  nl_annual_factor: 13.96
+  fx_to_eur:
+    EUR: 1.0
+    CHF: 1.07
+    GBP: 1.17
+    SEK: 0.088
+    DKK: 0.134
+    NOK: 0.086
+    PLN: 0.235
+    CZK: 0.040
+    USD: 0.92
+  # آگهی‌هایی که مبلغشان معلوم نیست کجای جدول بیایند؟ (bottom | top)
+  unknown_amount_position: bottom
+
+# ------------------------------------------------------------
+# ۴.۴) خلاصه‌نویسی با هوش مصنوعی (توصیه‌شده)
+# ------------------------------------------------------------
+# کلید API را در متغیر LLM_API_KEY / GitHub Secret بگذار.
+# provider های آماده: openrouter | groq | gemini | deepseek | mistral
+llm:
+  enabled: true
+  provider: openrouter
+  model: "minimax/minimax-m3:free"
+  # اگر مدل اصلی از دسترس خارج شد، این‌ها به‌ترتیب امتحان می‌شوند
+  fallback_models:
+    - "minimax/minimax-m2.7:free"
+    - "nvidia/nemotron-3-super-120b-a12b:free"
+    - "z-ai/glm-5.2:free"
+  api_key_env: LLM_API_KEY
+  workers: 3               # درخواست‌های هم‌زمان (مدل‌های رایگان محدودیت دارند)
+  temperature: 0.2
+  max_input_chars: 6000
+  retries: 3
+  timeout: 90
+  pace_seconds: 0.6      # فاصله بین درخواست‌ها (سهمیه رایگان محدود است)
+
+# ------------------------------------------------------------
+# ۴.۵) ترجمه ماشینی (فقط به‌عنوان پشتیبان، وقتی کلید AI نباشد)
+# ------------------------------------------------------------
+translate:
+  enabled: true
+  language: fa
+  max_chars: 420        # طول خلاصه انگلیسی قبل از ترجمه
+  workers: 4
+  translate_titles: false   # true = عنوان‌ها هم ترجمه شوند
+
+# ------------------------------------------------------------
+# ۵) خروجی و ارسال
+# ------------------------------------------------------------
+output:
+  keep_days: 60              # آرشیو گزارش‌ها
+  max_rows_in_email: 60
+  only_new_in_email: false   # true = فقط آگهی‌هایی که قبلاً ندیده‌ای
+
+delivery:
+  # --- ایمیل ---
+  email:
+    enabled: false        # مسیر انتخابی: تلگرام. اگر بعداً ایمیل خواستی true کن.
+    # گیرنده‌ها (هر تعداد که بخواهی)
+    recipients:
+      - "YOUR_EMAIL@example.com"
+    # اطلاعات SMTP از متغیرهای محیطی/GitHub Secrets خوانده می‌شود:
+    # SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM
+    smtp_host_env: SMTP_HOST
+    smtp_port_env: SMTP_PORT
+    smtp_user_env: SMTP_USER
+    smtp_pass_env: SMTP_PASS
+    from_env: SMTP_FROM
+    subject_prefix: "[PhD Radar]"
+
+  # --- تلگرام (بدون نیاز به هیچ ایمیلی) ---
+  telegram:
+    enabled: true
+    # TELEGRAM_BOT_TOKEN و TELEGRAM_CHAT_ID را در Secrets بگذار
+    token_env: TELEGRAM_BOT_TOKEN
+    chat_id_env: TELEGRAM_CHAT_ID
+    top_n: 12              # چند آگهی برتر در پیام تلگرام بیاید
+    items_per_message: 2   # چند آگهی در هر پیام (کمتر = خواناتر)
+    send_html_file: true   # فایل HTML کامل هم به‌عنوان داکیومنت ارسال شود
+    skip_if_empty: false   # true = اگر موردی پیدا نشد، هیچ پیامی نفرست
+    # امضای پایین هر گزارش (برای کانال عمومی مفید است)
+    signature: "🤖 گزارش خودکار روزانه · منابع: AcademicTransfer، EURAXESS، NWO"
+
+  # --- انتشار روی GitHub Pages (یک لینک ثابت همیشگی) ---
+  pages:
+    enabled: true
+    output_dir: docs
