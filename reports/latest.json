@@ -130,7 +130,7 @@
   "amount_eur_year": 44727.840000000004,
   "amount_max_eur_year": 56551.96000000001,
   "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال",
-  "score": 70.6,
+  "score": 74.6,
   "matched": "psycholog*, neuroscien*, cognitive neuroscience",
   "first_seen": "2026-09-15"
  },
@@ -322,5 +322,32 @@
   "score": 75.6,
   "matched": "psycholog*, psychopathology, psychometrics, resilience, patients",
   "first_seen": "2026-09-07"
+ },
+ {
+  "uid": "at:364279",
+  "source": "AcademicTransfer",
+  "kind": "job",
+  "title": "Promovendus BUILD-BONE: Behavioural and exercise-based interventions for bone strength and density",
+  "url": "https://www.academictransfer.com/en/jobs/364279/promovendus-build-bone-behavioural-and-exercise-based-interventions-for-bone-strength-and-density/",
+  "organisation": "About Tilburg University",
+  "country": "Netherlands",
+  "city": "Tilburg",
+  "deadline": "2026-10-19",
+  "posted": "2026-09-28",
+  "field": "",
+  "summary": "Tilburg University is op zoek naar een enthousiaste en gemotiveerde promovendus die een sterke affiniteit heeft voor – en bij voorkeur al ervaring heeft in het doen van – onderzoek op het raakvlak tussen psychologie en geneeskunde. Het onderzoek vindt plaats …",
+  "summary_fa": "شرح پروژه این پروژه بر توسعه یک مداخله نوآورانه در سبک زندگی برای جوانان بین 12 تا 25 ساله برای کاهش خطر ابتلا به پوکی استخوان تمرکز دارد. این پروژه 4 سال طول می کشد و با همکاری 27 شریک بین المللی دیگر انجام می شود و جذب شرکت کنندگان در هلند، کانادا، یونان، پرتغال، رومانی و اسپانیا انجام می شود. این پروژه همچنین شامل همکاری نزدیک با بخش ارتوپدی بیمارستان Elizabeth-TweeSteden در تیلبورگ خواهد بود.",
+  "summary_en": "Beschrijving van het project Dit project richt zich op het ontwikkelen van een innovatieve leefstijl interventie voor jongeren tussen 12-25 jaar om het risico op osteoporose te verlagen. Het project zal 4 jaar duren en wordt uitgevoerd in samenwerking met 27 andere internationale partners, waarbij werving van deelnemers plaats zal vinden in Nederland, Canada, Griekenland, Portugal, Roemenië en Spanje. Binnen dit project zal ook nauw samengewerkt worden met de afdeling orthopedie van het Elizabeth-TweeSteden ziekenhuis in Tilburg.",
+  "title_fa": "",
+  "salary_text": "Temporary · 36 h/week",
+  "salary_min_month": 0.0,
+  "salary_max_month": 0.0,
+  "fte": 0.9473684210526315,
+  "amount_eur_year": 0.0,
+  "amount_max_eur_year": 0.0,
+  "amount_note": "",
+  "score": 69.6,
+  "matched": "psycholog*, klinische psycholog*, gedragswetenschap*",
+  "first_seen": "2026-09-29"
  }
 ]
