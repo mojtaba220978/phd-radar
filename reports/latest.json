@@ -131,7 +131,7 @@
   "amount_max_eur_year": 56551.96000000001,
   "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال",
   "score": 73.0,
-  "matched": "psycholog*, neuropsycholog*, neuroscien*, eeg, health psychology, wellbeing, resilience, patients",
+  "matched": "psycholog*, neuropsycholog*, neuroscien*, health psychology, wellbeing, resilience",
   "first_seen": "2026-10-03"
  },
  {
@@ -214,33 +214,6 @@
   "score": 75.8,
   "matched": "neuropsycholog*, neuroscien*, tms, cognition",
   "first_seen": "2026-09-14"
- },
- {
-  "uid": "eux:469905",
-  "source": "EURAXESS",
-  "kind": "job",
-  "title": "PhD neural organoids to predict neuroinvasive viruses MSCA-DN",
-  "url": "https://euraxess.ec.europa.eu/jobs/469905",
-  "organisation": "AcademicTransfer",
-  "country": "Netherlands",
-  "city": "",
-  "deadline": "8 Oct 2026 - 21:59 (UTC)",
-  "posted": "2 October 2026",
-  "field": "Medical sciences » Medicine Neurosciences » Neurobiology Neurosciences » Neuroinformatics",
-  "summary": "We are seeking a highly motivated and talented individual to work as a doctoral candidate on the MSCA-DN DETECTIVE project.For rapid control of virus outbreaks, fast availability of antivirals is a major bottleneck. In DETECTIVE, innovative models will be used for setting up an antiviral testing...",
-  "summary_fa": "ما به دنبال فردی با انگیزه و با استعداد برای کار به عنوان کاندیدای دکترا در پروژه MSCA-DN DETECTIVE هستیم. برای کنترل سریع شیوع ویروس، در دسترس بودن سریع ضد ویروس ها یک گلوگاه بزرگ است. در DETECTIVE از مدل های نوآورانه برای راه اندازی یک ضد ویروس استفاده می شود.",
-  "summary_en": "We are seeking a highly motivated and talented individual to work as a doctoral candidate on the MSCA-DN DETECTIVE project.For rapid control of virus outbreaks, fast availability of antivirals is a major bottleneck. In DETECTIVE, innovative models will be used for setting up an antiviral.",
-  "title_fa": "",
-  "salary_text": "Not funded by a EU programme",
-  "salary_min_month": 0.0,
-  "salary_max_month": 0.0,
-  "fte": 0.0,
-  "amount_eur_year": 40800.0,
-  "amount_max_eur_year": 0.0,
-  "amount_note": "نرخ استاندارد MSCA (تخمینی) — رقم دقیق به ضریب کشور بستگی دارد",
-  "score": 78.2,
-  "matched": "neuroscien*",
-  "first_seen": "2026-10-03"
  },
  {
   "uid": "at:363766",
