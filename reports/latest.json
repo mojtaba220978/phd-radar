@@ -268,32 +268,5 @@
   "score": 69.6,
   "matched": "psycholog*, klinische psycholog*, gedragswetenschap*",
   "first_seen": "2026-09-29"
- },
- {
-  "uid": "eux:472095",
-  "source": "EURAXESS",
-  "kind": "job",
-  "title": "PhD Candidate in psychology",
-  "url": "https://euraxess.ec.europa.eu/jobs/472095",
-  "organisation": "NTNU Norwegian University of Science and Technology",
-  "country": "Norway",
-  "city": "",
-  "deadline": "1 Nov 2026 - 23:59 (Europe/Oslo)",
-  "posted": "12 October 2026",
-  "field": "Psychological sciences",
-  "summary": "This is NTNUNTNU is a broad-based university with a technical-scientific profile and a focus in professional education. The university is located in three cities with headquarters in Trondheim.At NTNU, 9,000 employees and 43,000 students work to create knowledge for a better world.You will find more...",
-  "summary_fa": "این NTNUNTNU یک دانشگاه گسترده با مشخصات فنی-علمی و تمرکز بر آموزش حرفه ای است.",
-  "summary_en": "This is NTNUNTNU is a broad-based university with a technical-scientific profile and a focus in professional education.",
-  "title_fa": "",
-  "salary_text": "Not funded by a EU programme",
-  "salary_min_month": 0.0,
-  "salary_max_month": 0.0,
-  "fte": 0.0,
-  "amount_eur_year": 0.0,
-  "amount_max_eur_year": 0.0,
-  "amount_note": "",
-  "score": 53.2,
-  "matched": "psycholog*",
-  "first_seen": "2026-10-12"
  }
 ]
