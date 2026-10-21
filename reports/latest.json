@@ -108,33 +108,6 @@
   "first_seen": "2026-10-19"
  },
  {
-  "uid": "at:363929",
-  "source": "AcademicTransfer",
-  "kind": "job",
-  "title": "PhD Position: Curiosity in the Classroom",
-  "url": "https://www.academictransfer.com/en/jobs/363929/phd-position-curiosity-in-the-classroom/",
-  "organisation": "Radboud Universiteit",
-  "country": "Netherlands",
-  "city": "Nijmegen",
-  "deadline": "2026-10-20",
-  "posted": "2026-09-14",
-  "field": "",
-  "summary": "Are you fascinated by how curiosity shapes learning in the classroom? Would you like to investigate how children seek information, explore and learn in real-world educational settings? If so, then we invite you to apply for this PhD position on Curiosity in t…",
-  "summary_fa": "اگر چنین است، پس از شما دعوت می کنیم برای این موقعیت دکترا در مورد کنجکاوی در کلاس درس در دانشگاه رادبود درخواست دهید. در این پروژه دکترا، کنجکاوی در کودکان 10 تا 12 ساله را در محیط های آموزشی معتبر بررسی خواهید کرد. این پروژه تحقیقات تجربی، مطالعات کلاسی و مدل‌سازی محاسباتی را ترکیب می‌کند تا بهتر بفهمد چه چیزی کودکان را کنجکاو می‌کند، چگونه تصمیم می‌گیرند کدام اطلاعات را کشف کنند و چگونه روش‌های مختلف ساختاردهی محیط‌های یادگیری بر کنجکاوی و یادگیری تأثیر می‌گذارد.",
-  "summary_en": "If so, then we invite you to apply for this PhD position on Curiosity in the Classroom at Radboud University. In this PhD project, you will investigate curiosity in 10-to 12-year-old children within authentic educational settings. The project combines experimental research, classroom studies and computational modelling to better understand what makes children curious, how they decide which information to explore, and how different ways of structuring learning environments influence curiosity and learning.",
-  "title_fa": "",
-  "salary_text": "€3,204–€4,051 gross/month · Temporary · 38 h/week",
-  "salary_min_month": 3204.0,
-  "salary_max_month": 4051.0,
-  "fte": 1.0,
-  "amount_eur_year": 44727.840000000004,
-  "amount_max_eur_year": 56551.96000000001,
-  "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال",
-  "score": 74.6,
-  "matched": "psycholog*, neuroscien*, cognitive neuroscience",
-  "first_seen": "2026-09-15"
- },
- {
   "uid": "at:364471",
   "source": "AcademicTransfer",
   "kind": "job",
@@ -238,7 +211,7 @@
   "amount_eur_year": 44727.840000000004,
   "amount_max_eur_year": 56551.96000000001,
   "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال",
-  "score": 62.2,
+  "score": 66.2,
   "matched": "resilience",
   "first_seen": "2026-10-06"
  }
