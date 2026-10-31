@@ -160,5 +160,32 @@
   "score": 66.2,
   "matched": "resilience",
   "first_seen": "2026-10-06"
+ },
+ {
+  "uid": "at:365195",
+  "source": "AcademicTransfer",
+  "kind": "job",
+  "title": "Promovendus 'Klinisch en preklinisch onderzoek naar medicamenteuze behandelingen voor gokverslaving'",
+  "url": "https://www.academictransfer.com/en/jobs/365195/promovendus-klinisch-en-preklinisch-onderzoek-naar-medicamenteuze-behandelingen-voor-gokverslaving/",
+  "organisation": "Radboudumc",
+  "country": "Netherlands",
+  "city": "Nijmegen",
+  "deadline": "2026-12-01",
+  "posted": "2026-10-30",
+  "field": "Psychiatrie",
+  "summary": "Functie Sinds de legalisering van online gokken in Nederland in 2021 is er veel aandacht voor de gevolgen van gokproblematiek en de behoefte aan vernieuwende, effectieve behandelingen. In deze studie onderzoeken we veelbelovende medicamenteuze behandelingen v…",
+  "summary_fa": "برای این پروژه ما به دنبال یک کاندیدای دکتری جاه طلب و با انگیزه هستیم که این تحقیق را هماهنگ و انجام دهد. علاوه بر این، شما در تحقیقات پیش بالینی در مورد درمان های دارویی بالقوه در یک مدل حیوانی برای اختلال قمار مشارکت می کنید. این تحقیق اساس پایان نامه شما را تشکیل می دهد و به توسعه درمان های موثرتر برای افراد مبتلا به اختلال قمار کمک می کند.",
+  "summary_en": "Voor dit project zoeken wij een ambitieuze en gedreven promovendus die dit onderzoek coördineert en uitvoert. Daarnaast draag je bij aan het preklinische onderzoek naar potentiële medicamenteuze behandelingen in een diermodel voor gokstoornis. Het onderzoek vormt de basis voor je proefschrift en draagt bij aan de ontwikkeling van effectievere behandelingen voor mensen met een gokstoornis.",
+  "title_fa": "",
+  "salary_text": "€3,217–€5,867 gross/month · Temporary · 36 h/week",
+  "salary_min_month": 3217.0,
+  "salary_max_month": 5867.0,
+  "fte": 0.9473684210526315,
+  "amount_eur_year": 42545.67157894737,
+  "amount_max_eur_year": 77592.61894736842,
+  "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال · 36 ساعت در هفته",
+  "score": 79.0,
+  "matched": "psycholog*, psychiatr*",
+  "first_seen": "2026-10-31"
  }
 ]
