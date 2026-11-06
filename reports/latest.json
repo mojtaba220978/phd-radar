@@ -160,5 +160,32 @@
   "score": 79.0,
   "matched": "psycholog*, psychiatr*",
   "first_seen": "2026-10-31"
+ },
+ {
+  "uid": "rss:https-euraxess-ec-europa-eu-jobs-474859",
+  "source": "EURAXESS latest jobs (RSS)",
+  "kind": "job",
+  "title": "PhD Fellowship in Biological Psychology",
+  "url": "https://euraxess.ec.europa.eu/jobs/474859",
+  "organisation": "University of Stavanger",
+  "country": "",
+  "city": "",
+  "deadline": "",
+  "posted": "Thu, 22 Oct 26 1",
+  "field": "",
+  "summary": "The University of Stavanger invites applicants for a position as PhD Fellow in Biological Psychology at the Faculty of Social Sciences, Department of Psychology. The position is vacant from December 2026. The PhD fellowship leads to a…",
+  "summary_fa": "دانشگاه استاوانگر از متقاضیان برای موقعیت دکترا در روانشناسی زیستی در دانشکده علوم اجتماعی، گروه روانشناسی دعوت می کند.",
+  "summary_en": "The University of Stavanger invites applicants for a position as PhD Fellow in Biological Psychology at the Faculty of Social Sciences, Department of Psychology.",
+  "title_fa": "",
+  "salary_text": "",
+  "salary_min_month": 0.0,
+  "salary_max_month": 0.0,
+  "fte": 0.0,
+  "amount_eur_year": 0.0,
+  "amount_max_eur_year": 0.0,
+  "amount_note": "",
+  "score": 49.2,
+  "matched": "psycholog*",
+  "first_seen": "2026-11-06"
  }
 ]
