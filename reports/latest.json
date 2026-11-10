@@ -1,32 +1,5 @@
 [
  {
-  "uid": "at:364892",
-  "source": "AcademicTransfer",
-  "kind": "job",
-  "title": "PhD Position: Transcranial Ultrasound Stimulation and Computational Affective Neuroscience",
-  "url": "https://www.academictransfer.com/en/jobs/364892/phd-position-transcranial-ultrasound-stimulation-and-computational-affective-neuroscience/",
-  "organisation": "Radboud Universiteit",
-  "country": "Netherlands",
-  "city": "Nijmegen",
-  "deadline": "2026-11-09",
-  "posted": "2026-10-20",
-  "field": "",
-  "summary": "Are you passionate about affective neuroscience computational modelling and transcranial ultrasound stimulation? Come and join our PhD project on approach-avoidance decisions under threat, funded by the ERC Advanced Grant HEART2ADAPT, and work with a dynamic …",
-  "summary_fa": "بیایید و به پروژه دکتری ما در مورد تصمیمات اجتناب از رویکرد تحت تهدید بپیوندید که توسط ERC Advanced Grant HEART2ADAPT تامین می شود و با یک تیم پویا کار کنید. پروژه HEART2ADAPT که توسط کمک هزینه پیشرفته شورای تحقیقات اروپا (ERC) تامین می شود، این فرصت را به شما ارائه می دهد که در توسعه پروتکل، جمع آوری داده ها و مدل سازی محاسباتی داده های رفتاری و عصبی مشارکت کنید. شما TUS را برای گره های کلیدی مدل ما، از جمله آمیگدال، مخطط شکمی و ACC پشتی اعمال خواهید کرد.",
-  "summary_en": "Come and join our PhD project on approach-avoidance decisions under threat, funded by the ERC Advanced Grant HEART2ADAPT, and work with a dynamic team. Funded by a European Research Council (ERC) Advanced Grant, the project HEART2ADAPT offers you the opportunity to contribute to protocol development, data collection and computational modelling of behavioural and neural data. You will apply TUS to key nodes of our model, including the amygdala, ventral striatum and dorsal ACC.",
-  "title_fa": "",
-  "salary_text": "€3,204–€4,051 gross/month · Temporary · 38 h/week",
-  "salary_min_month": 3204.0,
-  "salary_max_month": 4051.0,
-  "fte": 1.0,
-  "amount_eur_year": 44727.840000000004,
-  "amount_max_eur_year": 56551.96000000001,
-  "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال",
-  "score": 100.0,
-  "matched": "psycholog*, psychiatr*, neuroscien*, psychiatry, cognitive neuroscience, computational psychiatry, affective neuroscience, neuroimaging",
-  "first_seen": "2026-10-20"
- },
- {
   "uid": "at:365035",
   "source": "AcademicTransfer",
   "kind": "job",
@@ -130,7 +103,7 @@
   "amount_eur_year": 42545.67157894737,
   "amount_max_eur_year": 77592.61894736842,
   "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال · 36 ساعت در هفته",
-  "score": 79.0,
+  "score": 83.0,
   "matched": "psycholog*, psychiatr*",
   "first_seen": "2026-10-31"
  }
