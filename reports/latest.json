@@ -79,5 +79,32 @@
   "score": 83.0,
   "matched": "psycholog*, psychiatr*",
   "first_seen": "2026-10-31"
+ },
+ {
+  "uid": "rss:https-euraxess-ec-europa-eu-jobs-476923",
+  "source": "EURAXESS latest jobs (RSS)",
+  "kind": "job",
+  "title": "Fully Funded PhD Positions in Astronomy, Biology, Computer Science, Chemistry & Materials, Data Science & Scientific Computing, Earth Science, Mathematics, Neuroscience, and Physics",
+  "url": "https://euraxess.ec.europa.eu/jobs/476923",
+  "organisation": "Institute of Science and Technology Austria (ISTA)",
+  "country": "",
+  "city": "",
+  "deadline": "",
+  "posted": "Mon, 02 Nov 26 1",
+  "field": "",
+  "summary": "Fully Funded PhD Positions in Astronomy, Biology, Computer Science, Chemistry & Materials, Data Science & Scientific Computing, Earth Science, Mathematics, Neuroscience, and Physics The Institute of Science and Technology Austria (ISTA) is…",
+  "summary_fa": "موقعیت های دکترا با بودجه کامل در نجوم، زیست شناسی، علوم کامپیوتر، شیمی و مواد، علوم داده و محاسبات علمی، علوم زمین، ریاضیات، علوم اعصاب، و فیزیک موسسه علوم و فناوری اتریش (ISTA).",
+  "summary_en": "Fully Funded PhD Positions in Astronomy, Biology, Computer Science, Chemistry & Materials, Data Science & Scientific Computing, Earth Science, Mathematics, Neuroscience, and Physics The Institute of Science and Technology Austria (ISTA).",
+  "title_fa": "",
+  "salary_text": "",
+  "salary_min_month": 0.0,
+  "salary_max_month": 0.0,
+  "fte": 0.0,
+  "amount_eur_year": 0.0,
+  "amount_max_eur_year": 0.0,
+  "amount_note": "",
+  "score": 49.2,
+  "matched": "neuroscien*",
+  "first_seen": "2026-11-17"
  }
 ]
