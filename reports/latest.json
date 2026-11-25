@@ -160,5 +160,32 @@
   "score": 83.0,
   "matched": "psycholog*, psychiatr*",
   "first_seen": "2026-10-31"
+ },
+ {
+  "uid": "at:365867",
+  "source": "AcademicTransfer",
+  "kind": "job",
+  "title": "Promovendus onderzoek naar neuroplasticiteit na elektroconvulsietherapie (ECT)",
+  "url": "https://www.academictransfer.com/en/jobs/365867/promovendus-onderzoek-naar-neuroplasticiteit-na-elektroconvulsietherapie-ect/",
+  "organisation": "Amsterdam UMC",
+  "country": "Netherlands",
+  "city": "Amsterdam",
+  "deadline": "2026-12-09",
+  "posted": "2026-11-25",
+  "field": "",
+  "summary": "Wil jij bijdragen aan meer inzicht in de werking van elektroconvulsietherapie (ECT) bij depressie? Combineer klinisch en fundamenteel onderzoek naar neuroplasticiteit, synapsdichtheid en hersenstimulatie.",
+  "summary_fa": "در این تحقیق دکترا شما بر مکانیسم های عصبی زیستی در پشت ECT تمرکز می کنید. شما بررسی خواهید کرد که چگونه این درمان بر روی نوروپلاستیسیته و تراکم سیناپس تاثیر می گذارد. شما تراکم سیناپس را در بافت مغز پس از مرگ بیماران مبتلا به افسردگی بررسی می کنید.",
+  "summary_en": "In dit promotieonderzoek richt je je op de neurobiologische mechanismen achter ECT. Je onderzoekt hoe deze behandeling de neuroplasticiteit en synapsdichtheid beïnvloedt. Je onderzoekt synapsdichtheid in postmortem hersenweefsel van patiënten met een depressie.",
+  "title_fa": "",
+  "salary_text": "€3,217–€5,867 gross/month · Temporary · 36 h/week",
+  "salary_min_month": 3217.0,
+  "salary_max_month": 5867.0,
+  "fte": 0.9473684210526315,
+  "amount_eur_year": 42545.67157894737,
+  "amount_max_eur_year": 77592.61894736842,
+  "amount_note": "شامل ۸٪ حق تعطیلات و ۸٫۳٪ پاداش پایان سال · 36 ساعت در هفته",
+  "score": 77.0,
+  "matched": "psycholog*, psychiatr*, neuroscien*, neurowetenschap*, eeg",
+  "first_seen": "2026-11-25"
  }
 ]
